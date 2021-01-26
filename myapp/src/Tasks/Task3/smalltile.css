@@ -1,0 +1,17 @@
+.smalltile{
+    box-shadow: 5px 10px 8px 10px #888888;
+    margin-top: 50px;
+}
+
+.skl{
+    background-color: rgb(24, 7, 56);
+   width: 50%;
+   margin-left: 150px;
+   
+   }
+   .profilebutton{
+    background-color: rgb(3, 3, 31);
+    width: 50%;
+    margin-left: 150px;
+    
+   }
