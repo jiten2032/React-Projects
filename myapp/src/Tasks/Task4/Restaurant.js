@@ -1,33 +1,16 @@
 import React, { Component } from 'react'
 
 export class Restaurant extends Component {
-   
-    //     handleChange = (e) => {
-    //         this.setState({
-    // [e.target.id]:
-    //         })
-    //     }
 
-    handleChange = (e) => {
-        // console.log( this.props.Mydata.filter(star => {
-        //     return (star.Stars === 4)
-
-        // }));
-
-        this.props.Mydata.filter(star => {
-            return (star.Stars === 4)
-
-        })
-    }
 
     render() {
         // console.log(this.props);
 
-        const {Mydata} = this.props;
-      
+        const { Mydata } = this.props;
+
         const EachData = Mydata.map(Data => {
-          
-           
+
+
             return (
 
                 <div className="mt-5 container card border-dark " key={Data.id}>
@@ -78,24 +61,9 @@ export class Restaurant extends Component {
 
         return (
 
-            <div className="container text-center">
-                <span className="text-success">Customer Ratings - </span>
-                <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" onSubmit={this.handleChange} className="btn-check"  name="name" id="btnradio1" value="4* & Above" autoComplete="off" />
-                    <label className="btn btn-outline-success" htmlFor="btnradio1">4* & Above</label>
-
-                    <input type="radio" className="btn-check" name="name" id="btnradio2" value="3* & Above" autoComplete="off" />
-                    <label className="btn btn-outline-success" htmlFor="btnradio2">3* & Above</label>
-
-                    <input type="radio" className="btn-check" name="name" id="btnradio3" value="2* & Above" autoComplete="off" />
-                    <label className="btn btn-outline-success" htmlFor="btnradio3">2* & Above</label>
-
-                    <input type="radio" className="btn-check" name="name" id="btnradio4" value="Clear all" autoComplete="off" />
-                    <label className="btn btn-outline-success" htmlFor="btnradio4">Clear all</label>
-
-                </div>
 
 
+            <div>
 
                 {EachData}
 

@@ -15,7 +15,7 @@ export class RestaurantDetails extends Component {
                     Cost: '₹400 for two people (approx.)',
                     Time: 'Open Now - 11:30am - 11pm (Today)',
                     PaymentMethods: 'Cash and Cards accepted',
-                    Location:'Sahid Nagar',
+                    Location: 'Sahid Nagar',
                     Stars: 3.2,
                     Votes: '26 votes',
                     Reviews: '50 reviews',
@@ -31,7 +31,7 @@ export class RestaurantDetails extends Component {
                     Cost: '₹500 for two people (approx.)',
                     Time: 'Open now - 12noon - 1am(Today)',
                     PaymentMethods: 'Cash only',
-                    Location:'Nayapalli',
+                    Location: 'Nayapalli',
                     Stars: 2.9,
                     Votes: '25 votes',
                     Reviews: '88 reviews',
@@ -45,7 +45,7 @@ export class RestaurantDetails extends Component {
                     Cost: '₹1,400 for two people (approx.) Without alcohol',
                     Time: 'Open now - 12noon - 1am(Today)',
                     PaymentMethods: 'Cash and Cards accepted',
-                    Location:'Kharbela Nagar',
+                    Location: 'Kharbela Nagar',
                     Stars: 4.4,
                     Votes: '402 votes',
                     Reviews: '263 reviews',
@@ -116,12 +116,64 @@ export class RestaurantDetails extends Component {
             ]
         }
     }
+    handleChange4 = (e) => {
+        e.preventDefault()
+        let Restaurantlist = this.state.Data.filter(star => {
+            return (star.Stars >= 4)
+        })
+
+        this.setState({
+            Data: Restaurantlist
+        })
+
+    }
+    handleChange3 = (e) => {
+        e.preventDefault()
+        let Restaurantlist = this.state.Data.filter(star => {
+            return (star.Stars >= 3 && star.Stars < 4)
+        })
+
+        this.setState({
+            Data: Restaurantlist
+        })
+
+    }
+    handleChange2 = (e) => {
+        e.preventDefault()
+        let Restaurantlist = this.state.Data.filter(star => {
+            return (star.Stars >= 2 && star.Stars < 3)
+        })
+
+        this.setState({
+            Data: Restaurantlist
+        })
+
+    }
 
     render() {
         const { Data } = this.state;
         return (
             <div>
                 <Navbar />
+
+                <div className="container text-center">
+                    <span className="text-success">Customer Ratings - </span>
+                    <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="button" onClick={this.handleChange4} className="btn-check"  id="btnradio1" value="4* & Above"  />
+                        <label className="btn btn-outline-success" htmlFor="btnradio1">4* & Above</label>
+
+                        <input type="button" onClick={this.handleChange3} className="btn-check" id="btnradio2" value="3* & Above"  />
+                        <label className="btn btn-outline-success" htmlFor="btnradio2">3* & Above</label>
+
+                        <input type="button" onClick={this.handleChange2} className="btn-check"  id="btnradio3" value="2* & Above" />
+                        <label className="btn btn-outline-success" htmlFor="btnradio3">2* & Above</label>
+
+
+                    </div>
+
+                </div>
+
+
                 <Restaurant Mydata={Data} />
 
             </div>
